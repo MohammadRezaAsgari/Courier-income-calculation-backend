@@ -2,5 +2,5 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('admin/', index),
+    path('weekly-incomes/', WeeklyIncomeListView.as_view()),
 ]
