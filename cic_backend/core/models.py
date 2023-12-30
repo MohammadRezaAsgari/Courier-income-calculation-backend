@@ -7,7 +7,7 @@ class Courier(models.Model):
 
 class Travel(models.Model):
     courier = models.ForeignKey(Courier, on_delete=models.CASCADE)
-    income = models.PositiveIntegerField()
+    value = models.PositiveIntegerField()
     date = models.DateField()
 
 class Bonus(models.Model):
@@ -22,10 +22,10 @@ class Penalty(models.Model):
 
 class DailyIncome(models.Model):
     courier = models.ForeignKey(Courier, on_delete=models.CASCADE)
-    income = models.PositiveIntegerField()
+    income = models.IntegerField(default=0)
     date = models.DateField()
 
 class WeeklyIncome(models.Model):
     courier = models.ForeignKey(Courier, on_delete=models.CASCADE)
-    income = models.PositiveIntegerField()
+    income = models.IntegerField(default=0)
     saturday_date = models.DateField()
