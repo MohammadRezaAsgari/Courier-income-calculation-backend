@@ -5,6 +5,9 @@ class Courier(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
 
+    class Meta:
+        unique_together = ['first_name','last_name']
+
 class Travel(models.Model):
     courier = models.ForeignKey(Courier, on_delete=models.CASCADE)
     value = models.PositiveIntegerField()
